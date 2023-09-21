@@ -6,7 +6,7 @@
 /*   By: yabad <yabad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 19:00:55 by yabad             #+#    #+#             */
-/*   Updated: 2023/09/21 23:06:11 by yabad            ###   ########.fr       */
+/*   Updated: 2023/09/21 23:06:03 by yabad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ Animal**	create_animals(const int size) {
 int	main() {
 	Animal**	animals;
 
-	animals = create_animals(2);
-	for (int i = 0; i < 2; i++) {
+	animals = create_animals(10);
+	for (int i = 0; i < 10; i++) {
 		delete animals[i];
 	}
 	delete [] animals;
