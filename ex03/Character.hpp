@@ -6,7 +6,7 @@
 /*   By: yabad <yabad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 17:02:27 by yabad             #+#    #+#             */
-/*   Updated: 2023/09/24 17:07:39 by yabad            ###   ########.fr       */
+/*   Updated: 2023/09/24 17:12:30 by yabad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 
 class Character : public ICharacter {
 	private:
-
+		std::string name;
+		AMateria*	inventory[4];	
 	public:
 		Character();
 		Character(const Character&);
