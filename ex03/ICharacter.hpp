@@ -6,7 +6,7 @@
 /*   By: yabad <yabad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 13:54:36 by yabad             #+#    #+#             */
-/*   Updated: 2023/09/24 16:24:07 by yabad            ###   ########.fr       */
+/*   Updated: 2023/09/24 16:51:39 by yabad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class ICharacter {
 	public:
-		virtual ~ICharacter();
+		virtual ~ICharacter() {};
 		virtual std::string const& getName() const = 0;
 		virtual void equip(AMateria* m) = 0;
 		virtual void unequip(int idx) = 0;
