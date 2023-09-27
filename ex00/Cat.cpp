@@ -6,7 +6,7 @@
 /*   By: yabad <yabad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 16:27:37 by yabad             #+#    #+#             */
-/*   Updated: 2023/09/21 22:23:09 by yabad            ###   ########.fr       */
+/*   Updated: 2023/09/27 17:42:08 by yabad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ Cat::Cat() {
 
 Cat::Cat(const Cat& other) : Animal(other) {
 	std::cout << "Cat copy constructor called." << std::endl;
-	*this = other;
 }
 
 Cat::~Cat() {
