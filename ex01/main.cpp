@@ -6,7 +6,7 @@
 /*   By: yabad <yabad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 19:00:55 by yabad             #+#    #+#             */
-/*   Updated: 2023/09/21 23:06:11 by yabad            ###   ########.fr       */
+/*   Updated: 2023/09/27 17:53:17 by yabad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,13 @@ int	main() {
 		delete animals[i];
 	}
 	delete [] animals;
+	
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	
+	j->makeSound();
+	i->makeSound();
+	delete i;
+	delete j;
 	return (0);
 }
