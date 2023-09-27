@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabad <yabad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/24 14:05:33 by yabad             #+#    #+#             */
-/*   Updated: 2023/09/24 16:43:31 by yabad            ###   ########.fr       */
+/*   Created: 2023/09/27 15:13:58 by yabad             #+#    #+#             */
+/*   Updated: 2023/09/27 15:15:14 by yabad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ class Cure : public AMateria {
 		~Cure();
 		
 		Cure& operator=(const Cure&);
-		
+
 		AMateria* clone() const;
-		void use(ICharacter& target);
+		void use(ICharacter&);
 };
 
 #endif

@@ -5,30 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabad <yabad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/24 16:28:55 by yabad             #+#    #+#             */
-/*   Updated: 2023/09/24 16:49:39 by yabad            ###   ########.fr       */
+/*   Created: 2023/09/27 15:47:55 by yabad             #+#    #+#             */
+/*   Updated: 2023/09/27 15:54:31 by yabad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
 Cure::Cure() : AMateria("cure") {
-	std::cout << "Cure default constructor called." << std::endl;
+	std::cout << "Default constructor called for Cure." << std::endl;
 }
 
 Cure::Cure(const Cure& other) : AMateria(other) {
-	std::cout << "Cure copy constructor called." << std::endl;
-	*this = other;
+	std::cout << "Copy constructor called for Cure." << std::endl;
 }
 
 Cure::~Cure() {
-	std::cout << "Cure destructor called." << std::endl;
+	std::cout << "Destructor called for Cure." << std::endl;
 }
 
 Cure& Cure::operator=(const Cure& other) {
-	std::cout << "Cure copy assignment operator called." << std::endl;
-	if (this != &other)
-		this->type = other.type;
+	std::cout << "Copy assignment operator called for Cure." << std::endl;
+	if (this != &other) {
+		AMateria::operator=(other);
+	}
 	return (*this);
 }
 
@@ -37,5 +37,5 @@ AMateria* Cure::clone() const {
 }
 
 void Cure::use(ICharacter& target) {
-	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+	std::cout << "Cure : * heals " << target.getName() << "'s wounds *" << std::endl;
 }
