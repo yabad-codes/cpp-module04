@@ -6,7 +6,7 @@
 /*   By: yabad <yabad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 19:00:55 by yabad             #+#    #+#             */
-/*   Updated: 2023/09/27 17:53:17 by yabad            ###   ########.fr       */
+/*   Updated: 2023/09/28 22:33:54 by yabad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ int	main() {
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 	
+	Dog dog1;
+	Dog dog2;
+
+	dog1 = dog2;
+	system("leaks animal");
 	j->makeSound();
 	i->makeSound();
 	delete i;
