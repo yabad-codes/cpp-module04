@@ -6,7 +6,7 @@
 /*   By: yabad <yabad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 16:04:09 by yabad             #+#    #+#             */
-/*   Updated: 2023/09/27 17:33:57 by yabad            ###   ########.fr       */
+/*   Updated: 2023/09/28 16:17:36 by yabad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Character::Character() {
 Character::Character(std::string const& name) {
 	this->name = name;
 	for (int i = 0; i < 4; i++) {
-		this->materias[i] = nullptr;
+		this->materias[i] = NULL;
 	}
 	// std::cout << "Character with name : " << this->name << " created with a constructor." << std::endl;
 }
@@ -34,7 +34,7 @@ Character::Character(const Character& other) {
 		if (other.materias[i])
 			this->materias[i] = other.materias[i]->clone();
 		else
-			this->materias[i] = nullptr;
+			this->materias[i] = NULL;
 	}
 	// std::cout << "Character with name : " << this->name << " created with the copy constructor." << std::endl;
 }
@@ -56,7 +56,7 @@ Character& Character::operator=(const Character& other) {
 			if (other.materias[i])
 				this->materias[i] = other.materias[i]->clone();
 			else
-				this->materias[i] = nullptr;
+				this->materias[i] = NULL;
 		}
 	}
 	// std::cout << "Character with name : " << this->name << " created with the copy assignment operator." << std::endl;
@@ -69,7 +69,7 @@ std::string const& Character::getName() const {
 
 void Character::equip(AMateria* m) {
 	for (int i = 0; i < 4; i++) {
-		if (this->materias[i] == nullptr) {
+		if (this->materias[i] == NULL) {
 			this->materias[i] = m;
 			// std::cout << "Character : " << this->name << " equipped with " << m->getType() << std::endl;
 			return ;
