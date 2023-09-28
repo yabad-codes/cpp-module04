@@ -6,7 +6,7 @@
 /*   By: yabad <yabad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 17:04:30 by yabad             #+#    #+#             */
-/*   Updated: 2023/09/27 17:34:47 by yabad            ###   ########.fr       */
+/*   Updated: 2023/09/28 16:18:12 by yabad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 MateriaSource::MateriaSource() {
 	// std::cout << "Default constructor called for MateriaSource." << std::endl;
 	for (int i = 0; i < 4; i++) {
-		this->materias[i] = nullptr;
+		this->materias[i] = NULL;
 	}
 }
 
@@ -25,7 +25,7 @@ MateriaSource::MateriaSource(const MateriaSource& other) {
 		if (other.materias[i])
 			this->materias[i] = other.materias[i]->clone();
 		else
-			this->materias[i] = nullptr;
+			this->materias[i] = NULL;
 	}
 }
 
@@ -45,14 +45,14 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& other) {
 		if (other.materias[i])
 			this->materias[i] = other.materias[i]->clone();
 		else
-			this->materias[i] = nullptr;
+			this->materias[i] = NULL;
 	}
 	return (*this);
 }
 
 void MateriaSource::learnMateria(AMateria* m) {
 	for (int i = 0; i < 4; i++) {
-		if (this->materias[i] == nullptr) {
+		if (this->materias[i] == NULL) {
 			this->materias[i] = m;
 			// std::cout << "MateriaSource learned " << m->getType() << std::endl;
 			return ;
