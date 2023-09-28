@@ -6,7 +6,7 @@
 /*   By: yabad <yabad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 15:57:27 by yabad             #+#    #+#             */
-/*   Updated: 2023/09/27 16:03:46 by yabad            ###   ########.fr       */
+/*   Updated: 2023/09/28 16:20:18 by yabad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 
 # include <iostream>
 # include "ICharacter.hpp"
+# include "MateriaList.hpp"
 
 class Character : public ICharacter {
 	private:
 		std::string	name;
 		AMateria*	materias[4];
+		MateriaList	equippedMaterias;
 	public:
 		Character();
 		Character(std::string const&);

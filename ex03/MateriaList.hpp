@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   MateriaList.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yabad <yabad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/27 17:27:46 by yabad             #+#    #+#             */
-/*   Updated: 2023/09/28 17:48:04 by yabad            ###   ########.fr       */
+/*   Created: 2023/09/28 13:37:42 by yabad             #+#    #+#             */
+/*   Updated: 2023/09/28 17:35:01 by yabad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "MateriaSource.hpp"
-#include "AMateria.hpp"
-#include "Character.hpp"
-#include "Ice.hpp"
-#include "Cure.hpp"
+#ifndef MATERIANODE_HPP
 
-int main()
-{
-	Character* me = new Character("yabad");
-	Character* her = new Character("houattou");
-	
-	IMateriaSource* src = new MateriaSource();
+# define MATERIANODE_HPP
+# include <iostream>
+# include "AMateria.hpp"
 
-	src->createMateria("ice");
-	me->use(0, *her);
-	return 0;
-}
+typedef struct s_materia {
+	AMateria*			materia;
+	struct s_materia*	next;
+} MateriaNode;
+
+class MateriaList {
+	private:
+		MateriaNode*	head;
+	public:
+		MateriaList();
+		MateriaList(const MateriaList&);
+		~MateriaList();
+		
+		MateriaList& operator=(const MateriaList&);
+		void append(AMateria* m);
+};
+
+#endif
