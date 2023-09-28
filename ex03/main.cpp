@@ -6,7 +6,7 @@
 /*   By: yabad <yabad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 17:27:46 by yabad             #+#    #+#             */
-/*   Updated: 2023/09/28 17:48:04 by yabad            ###   ########.fr       */
+/*   Updated: 2023/09/28 19:08:29 by yabad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,19 @@
 
 int main()
 {
-	Character* me = new Character("yabad");
-	Character* her = new Character("houattou");
-	
 	IMateriaSource* src = new MateriaSource();
-
-	src->createMateria("ice");
-	me->use(0, *her);
-	return 0;
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	ICharacter* me = new Character("me");
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	ICharacter* bob = new Character("bob");
+	me->use(0, *bob);
+	me->use(1, *bob);
+	delete bob;
+	delete me;
+	delete src;
 }

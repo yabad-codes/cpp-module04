@@ -6,7 +6,7 @@
 /*   By: yabad <yabad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 14:45:10 by yabad             #+#    #+#             */
-/*   Updated: 2023/09/28 17:40:33 by yabad            ###   ########.fr       */
+/*   Updated: 2023/09/28 19:07:49 by yabad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,11 @@ MateriaList::~MateriaList() {
 	MateriaNode* current = this->head;
 	while (current) {
 		MateriaNode* tmp = current;
+		MateriaNode* init = current;
 		current = current->next;
 		delete tmp->materia;
 		delete tmp;
+		init->materia = NULL;
 	}
 }
 
